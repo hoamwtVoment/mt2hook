@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="bin.mt.plus.hook"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <!-- Xposed 模块身份元数据 -->
+    <application
+        android:label="MT2 VIP Patch"
+        android:icon="@null">
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="MT管理器 VIP 本地判定 Patch (hook l/ە᩻ۨ native ۡ)" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+        <!-- 目标作用域: 仅 MT管理器本体 -->
+        <meta-data
+            android:name="xposedscope"
+            android:value="bin.mt.plus" />
+    </application>
+</manifest>

@@ -1,0 +1,42 @@
+// 顶层构建脚本：声明 AGP 插件版本并提供 classpath
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        // Xposed API 官方仓库（rovo89，坐标 de.robv.android.xposed:api:82）
+        maven { url 'https://api.xposed.info/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.4'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'bin.mt.plus.hook'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "bin.mt.plus.hook"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // Xposed(LSPosed) API —— compileOnly 取自官方仓库 de.robv.android.xposed:api:82
+    compileOnly 'de.robv.android.xposed:api:82'
+}
