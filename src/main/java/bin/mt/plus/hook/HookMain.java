@@ -30,8 +30,7 @@ public class HookMain implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lp) {
         if (!lp.packageName.equals(PKG)) return;
-        String ver = (lp.appInfo!=null && lp.appInfo.versionName!=null) ? lp.appInfo.versionName : "?";
-        Log.i(TAG, "attached -> " + PKG + " ver=" + ver);
+        Log.i(TAG, "attached -> " + PKG);
 
         // 用 XposedBridge.log 保证一定可见
         XposedBridge.log(TAG + " module loaded on " + PKG);
